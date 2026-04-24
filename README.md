@@ -217,7 +217,7 @@ docker compose down -v
 
 La siguiente captura muestra el stack levantado y los contenedores corriendo en este entorno:
 
-![Docker Compose ejecutándose](evidence.png)
+![Docker Compose ejecutándose](docs/evidence.png)
 
 ---
 
