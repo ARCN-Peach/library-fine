@@ -217,7 +217,7 @@ docker compose down -v
 
 La siguiente captura muestra el stack levantado y los contenedores corriendo en este entorno:
 
-![Docker Compose ejecutándose](docs/evidence.png)
+![Docker Compose ejecutándose](docs/images/evidence.png)
 
 ## Documentación adicional
 
@@ -328,3 +328,9 @@ mvn verify
 5. La capa application no depende de interfaces
 6. La capa interfaces no accede directamente a persistence
 7. La arquitectura por capas es respetada globalmente
+
+### Evidencia de tests
+
+La siguiente captura muestra la ejecución de `mvn test` en este entorno:
+
+![Evidencia de tests](docs/images/tests_evidences.png)
