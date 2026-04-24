@@ -213,6 +213,12 @@ docker compose down -v
 | RabbitMQ Management | http://localhost:15672 (guest / guest) |
 | PostgreSQL | localhost:5432 → db: `library_fine` |
 
+### Evidencia de ejecución
+
+La siguiente captura muestra el stack levantado y los contenedores corriendo en este entorno:
+
+![Docker Compose ejecutándose](evidence.png)
+
 ---
 
 ## Variables de entorno
