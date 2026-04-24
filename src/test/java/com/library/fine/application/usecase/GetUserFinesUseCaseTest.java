@@ -22,13 +22,18 @@ class GetUserFinesUseCaseTest {
     @BeforeEach
     void setUp() {
         repository = new FineRepositoryInMemory();
-        GenerateFineUseCaseTest.CapturingEventPublisher eventPublisher =
-                new GenerateFineUseCaseTest.CapturingEventPublisher();
+        CapturingEventPublisher eventPublisher = new CapturingEventPublisher();
         generateFineUseCase = new GenerateFineUseCase(repository, new FineService(), eventPublisher);
         payFineUseCase = new PayFineUseCase(repository, eventPublisher);
         getUserFinesUseCase = new GetUserFinesUseCase(repository);
     }
 
+    private static class CapturingEventPublisher implements EventPublisher {
+        @Override
+        public void publish(Object event) {
+            // no-op test double
+        }
+    }
     @Test
     void returns_all_user_fines_when_only_pending_is_false() {
         UUID userId = UUID.randomUUID();
