@@ -334,3 +334,9 @@ mvn verify
 La siguiente captura muestra la ejecución de `mvn test` en este entorno:
 
 ![Evidencia de tests](docs/evidences/tests_evidences.png)
+
+### Evidencia de cobertura JaCoCo
+
+La siguiente captura muestra el reporte de cobertura generado por JaCoCo (`mvn verify`):
+
+![Reporte JaCoCo](docs/evidences/jacoco.png)
