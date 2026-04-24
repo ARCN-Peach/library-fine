@@ -3,6 +3,9 @@ package com.library.fine.application.usecase;
 import com.library.fine.application.dto.FineResponse;
 import com.library.fine.application.dto.GenerateFineCommand;
 import com.library.fine.application.dto.PayFineCommand;
+import com.library.fine.application.port.FineEventPublisher;
+import com.library.fine.domain.event.FineGeneratedEvent;
+import com.library.fine.domain.event.FinePaidEvent;
 import com.library.fine.domain.service.FineService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,9 +31,14 @@ class GetUserFinesUseCaseTest {
         getUserFinesUseCase = new GetUserFinesUseCase(repository);
     }
 
-    private static class CapturingEventPublisher implements EventPublisher {
+    private static class CapturingEventPublisher implements FineEventPublisher {
         @Override
-        public void publish(Object event) {
+        public void publish(FineGeneratedEvent event) {
+            // no-op test double
+        }
+
+        @Override
+        public void publish(FinePaidEvent event) {
             // no-op test double
         }
     }
