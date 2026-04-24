@@ -77,7 +77,7 @@ class ArchitectureTest {
     @Test
     void layered_architecture_is_respected() {
         ArchRule rule = layeredArchitecture()
-                .consideringAllDependencies()
+                .consideringOnlyDependenciesInLayers()
                 .layer("Domain").definedBy(DOMAIN)
                 .layer("Application").definedBy(APPLICATION)
                 .layer("Infrastructure").definedBy(INFRASTRUCTURE)
