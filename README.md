@@ -217,7 +217,7 @@ docker compose down -v
 
 La siguiente captura muestra el stack levantado y los contenedores corriendo en este entorno:
 
-![Docker Compose ejecutándose](docs/images/evidence.png)
+![Docker Compose ejecutándose](docs/evidences/evidence.png)
 
 ## Documentación adicional
 
@@ -333,4 +333,4 @@ mvn verify
 
 La siguiente captura muestra la ejecución de `mvn test` en este entorno:
 
-![Evidencia de tests](docs/images/tests_evidences.png)
+![Evidencia de tests](docs/evidences/tests_evidences.png)
