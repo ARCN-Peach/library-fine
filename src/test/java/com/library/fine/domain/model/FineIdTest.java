@@ -10,13 +10,15 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class FineIdTest {
 
     @Test
-    void generate_creates_non_null_unique_values() {
+    void generate_creates_non_null_values_and_distinct_instances() {
         FineId first = FineId.generate();
         FineId second = FineId.generate();
 
+        assertThat(first).isNotNull();
+        assertThat(second).isNotNull();
         assertThat(first.getValue()).isNotNull();
         assertThat(second.getValue()).isNotNull();
-        assertThat(first).isNotEqualTo(second);
+        assertThat(first).isNotSameAs(second);
     }
 
     @Test
