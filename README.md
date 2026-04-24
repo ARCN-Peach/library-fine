@@ -219,6 +219,11 @@ La siguiente captura muestra el stack levantado y los contenedores corriendo en 
 
 ![Docker Compose ejecutándose](docs/evidence.png)
 
+## Documentación adicional
+
+- [Arquitectura del servicio](docs/architecture.md)
+- [Guía de verificación funcional](docs/verification.md)
+
 ---
 
 ## Variables de entorno
