@@ -28,20 +28,25 @@ curl http://localhost:8084/actuator/health
 
 La respuesta debe indicar `UP`.
 
-### 3. Revisar RabbitMQ
+### 3. Comprobar Swagger UI
+
+- Abrir `http://localhost:8084/swagger-ui.html`.
+- Verificar que aparezcan los endpoints de `Fines` con sus descripciones y respuestas.
+
+### 4. Revisar RabbitMQ
 
 - Abrir `http://localhost:15672`.
 - Iniciar sesión con `guest / guest`.
 - Confirmar que existen las colas y exchanges definidos por el servicio.
 
-### 4. Probar un flujo funcional
+### 5. Probar un flujo funcional
 
 1. Generar una multa desde el evento que corresponda o desde el consumidor si existe un endpoint de prueba.
 2. Consultar la multa por `GET /fines/{fineId}`.
 3. Pagarla con `POST /fines/{fineId}/pay`.
 4. Volver a consultar la multa y confirmar que pasó a `PAID`.
 
-### 5. Confirmar persistencia
+### 6. Confirmar persistencia
 
 ```sql
 select fine_id, rental_id, status, amount, generated_at, paid_at
@@ -52,7 +57,7 @@ order by generated_at desc;
 La consulta debe reflejar el cambio de estado y la fecha de pago si ya se ejecutó el flujo.
 
 
-### 6. Confirmar Outbox
+### 7. Confirmar Outbox
 
 ```sql
 select event_id, event_type, routing_key, published, occurred_at

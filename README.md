@@ -210,6 +210,8 @@ docker compose down -v
 |---|---|
 | API | http://localhost:8084 |
 | Actuator health | http://localhost:8084/actuator/health |
+| Swagger UI | http://localhost:8084/swagger-ui.html |
+| OpenAPI JSON | http://localhost:8084/v3/api-docs |
 | RabbitMQ Management | http://localhost:15672 (guest / guest) |
 | PostgreSQL | localhost:5432 → db: `library_fine` |
 
